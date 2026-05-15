@@ -22,3 +22,5 @@ When a retrieval session produces a useful new connection, save it as an Insight
 When it produces a choice, save it as a Decision candidate.
 
 When it produces a concrete next step, link it to a Project note or create a Project action candidate.
+
+When it produces a reusable answer, artifact, or synthesis, save or link it as an Output note candidate.
