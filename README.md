@@ -22,3 +22,17 @@ The system is designed around one principle:
 3. Compile into objects, maps, insights, projects, and decisions.
 4. Retrieve from maps and sources with evidence links.
 5. Lint the vault to find stale claims, weak evidence, duplicate notes, and missed links.
+
+## Verification
+
+Run:
+
+```bash
+./tools/verify-second-brain-skills.sh
+```
+
+Expected output:
+
+```text
+Second brain skill pack verification passed.
+```

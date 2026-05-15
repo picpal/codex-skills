@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+required_files=(
+  "README.md"
+  "shared/obsidian-second-brain/README.md"
+  "shared/obsidian-second-brain/references/vault-structure.md"
+  "shared/obsidian-second-brain/references/note-types.md"
+  "shared/obsidian-second-brain/references/workflows.md"
+  "shared/obsidian-second-brain/references/reliability.md"
+  "shared/obsidian-second-brain/templates/source.md"
+  "shared/obsidian-second-brain/templates/insight.md"
+  "shared/obsidian-second-brain/templates/home-dashboard.md"
+  "vault-template/00_System/dashboards/Home.md"
+  "vault-template/00_System/templates/source.md"
+  "vault-template/00_System/templates/insight.md"
+  "obsidian-capture/SKILL.md"
+  "obsidian-compile/SKILL.md"
+  "obsidian-retrieve/SKILL.md"
+  "obsidian-lint/SKILL.md"
+)
+
+for path in "${required_files[@]}"; do
+  if [[ ! -f "$path" ]]; then
+    echo "Missing required file: $path" >&2
+    exit 1
+  fi
+done
+
+required_dirs=(
+  "vault-template/10_Capture/inbox"
+  "vault-template/20_Sources/web"
+  "vault-template/30_Objects/insights"
+  "vault-template/40_Maps/topic-maps"
+  "vault-template/50_Execution/projects"
+  "vault-template/60_Reviews/lint-reports"
+)
+
+for path in "${required_dirs[@]}"; do
+  if [[ ! -d "$path" ]]; then
+    echo "Missing required directory: $path" >&2
+    exit 1
+  fi
+done
+
+grep -R "name: obsidian-capture" obsidian-capture/SKILL.md >/dev/null
+grep -R "name: obsidian-compile" obsidian-compile/SKILL.md >/dev/null
+grep -R "name: obsidian-retrieve" obsidian-retrieve/SKILL.md >/dev/null
+grep -R "name: obsidian-lint" obsidian-lint/SKILL.md >/dev/null
+grep -R "Merge Before Create" shared/obsidian-second-brain/references/reliability.md >/dev/null
+grep -R "New Connection" shared/obsidian-second-brain/templates/insight.md >/dev/null
+grep -R "Review Items" vault-template/00_System/dashboards/Home.md >/dev/null
+grep -R "Output" obsidian-retrieve/SKILL.md >/dev/null
+grep -R "Broken Links" obsidian-lint/references/lint-workflow.md >/dev/null
+
+if grep -R -E "T[B]D|TO[D]O|FIX[M]E" README.md shared vault-template obsidian-capture obsidian-compile obsidian-retrieve obsidian-lint >/dev/null; then
+  echo "Found placeholder text." >&2
+  exit 1
+fi
+
+echo "Second brain skill pack verification passed."
