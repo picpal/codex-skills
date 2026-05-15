@@ -18,9 +18,10 @@ Lint produces review items and synthesis reports. It does not silently rewrite l
 3. Find duplicate or merge candidates.
 4. Find stale claims and old decisions.
 5. Find weak evidence and missing source links.
-6. Find unresolved questions.
-7. Create a lint report in `60_Reviews/lint-reports`.
-8. Update Home dashboard review items.
+6. Find broken links.
+7. Find unresolved questions.
+8. Create a lint report in `60_Reviews/lint-reports`.
+9. Update Home dashboard review items.
 
 ## Report Sections
 
