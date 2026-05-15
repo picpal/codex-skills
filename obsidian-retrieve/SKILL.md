@@ -52,6 +52,7 @@ low | medium | high
 - Question:
 - Decision:
 - Project action:
+- Output:
 ```
 
 ## Safety
