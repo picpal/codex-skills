@@ -22,6 +22,10 @@ Decision notes whose review condition or date has been reached.
 
 Claim, Insight, or Decision notes without Source links.
 
+### Broken Links
+
+Links to notes, headings, embeds, or source references that no longer resolve.
+
 ### Unresolved Questions
 
 Question notes that remain open and have no next exploration step.
@@ -55,6 +59,10 @@ created: "{{date}}"
 ## Missing Evidence
 
 - [[note]]: missing source link
+
+## Broken Links
+
+- [[note]]: broken link target
 
 ## Unresolved Questions
 

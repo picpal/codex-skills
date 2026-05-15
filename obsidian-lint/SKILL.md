@@ -29,6 +29,7 @@ Lint produces review items and synthesis reports. It does not silently rewrite l
 - Stale claims
 - Decisions needing review
 - Missing evidence
+- Broken links
 - Unresolved questions
 - Suggested next actions
 
