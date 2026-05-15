@@ -2,9 +2,9 @@
 
 ## Processing Steps
 
-1. Read the captured Source note.
+1. Read the captured Source, Capture, quick-note, or unprocessed note.
 2. Extract candidate concepts, claims, questions, tensions, and execution implications.
-3. Search `30_Objects` and `40_Maps` for existing related notes.
+3. Search `30_Objects`, `40_Maps`, and `50_Execution` for existing related notes, projects, and decisions.
 4. Decide for each candidate:
    - update existing note
    - create new note
