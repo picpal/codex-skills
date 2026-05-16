@@ -18,6 +18,10 @@ required_files=(
   "vault-template/00_System/dashboards/Home.md"
   "vault-template/00_System/templates/source.md"
   "vault-template/00_System/templates/insight.md"
+  "tools/init-second-brain-vault.sh"
+  "tools/verify-vault.sh"
+  "obsidian-init/SKILL.md"
+  "obsidian-init/references/init-workflow.md"
   "obsidian-capture/SKILL.md"
   "obsidian-compile/SKILL.md"
   "obsidian-retrieve/SKILL.md"
@@ -48,9 +52,12 @@ for path in "${required_dirs[@]}"; do
 done
 
 grep -R "name: obsidian-capture" obsidian-capture/SKILL.md >/dev/null
+grep -R "name: obsidian-init" obsidian-init/SKILL.md >/dev/null
 grep -R "name: obsidian-compile" obsidian-compile/SKILL.md >/dev/null
 grep -R "name: obsidian-retrieve" obsidian-retrieve/SKILL.md >/dev/null
 grep -R "name: obsidian-lint" obsidian-lint/SKILL.md >/dev/null
+grep -R "Init Flow" shared/obsidian-second-brain/references/workflows.md >/dev/null
+grep -R "Obsidian second brain vault verification passed" tools/verify-vault.sh >/dev/null
 grep -R "Merge Before Create" shared/obsidian-second-brain/references/reliability.md >/dev/null
 grep -R "New Connection" shared/obsidian-second-brain/templates/insight.md >/dev/null
 grep -R "Review Items" vault-template/00_System/dashboards/Home.md >/dev/null
@@ -59,7 +66,17 @@ grep -R "Retrospectives" vault-template/00_System/templates/project.md >/dev/nul
 grep -R "Output" obsidian-retrieve/SKILL.md >/dev/null
 grep -R "Broken Links" obsidian-lint/references/lint-workflow.md >/dev/null
 
-if grep -R -E "T[B]D|TO[D]O|FIX[M]E" README.md shared vault-template obsidian-capture obsidian-compile obsidian-retrieve obsidian-lint >/dev/null; then
+if [[ ! -x tools/init-second-brain-vault.sh ]]; then
+  echo "Script is not executable: tools/init-second-brain-vault.sh" >&2
+  exit 1
+fi
+
+if [[ ! -x tools/verify-vault.sh ]]; then
+  echo "Script is not executable: tools/verify-vault.sh" >&2
+  exit 1
+fi
+
+if grep -R -E "T[B]D|TO[D]O|FIX[M]E" README.md shared vault-template obsidian-init obsidian-capture obsidian-compile obsidian-retrieve obsidian-lint >/dev/null; then
   echo "Found placeholder text." >&2
   exit 1
 fi

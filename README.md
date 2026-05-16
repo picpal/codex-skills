@@ -10,6 +10,7 @@ The system is designed around one principle:
 
 - `vault-template/`: starter Obsidian vault structure.
 - `shared/obsidian-second-brain/`: shared references and note templates.
+- `obsidian-init/`: skill for initial vault setup and connection checks.
 - `obsidian-capture/`: skill for frictionless raw input capture.
 - `obsidian-compile/`: skill for turning sources into linked memory.
 - `obsidian-retrieve/`: skill for answering questions from the vault.
@@ -17,15 +18,33 @@ The system is designed around one principle:
 
 ## Workflow
 
-1. Capture raw material or freeform thoughts.
-2. Preserve the source and metadata.
-3. Compile into objects, maps, insights, projects, and decisions.
-4. Retrieve from maps and sources with evidence links.
-5. Lint the vault to find stale claims, weak evidence, duplicate notes, and missed links.
+1. Initialize or verify the vault structure.
+2. Capture raw material or freeform thoughts.
+3. Preserve the source and metadata.
+4. Compile into objects, maps, insights, projects, and decisions.
+5. Retrieve from maps and sources with evidence links.
+6. Lint the vault to find stale claims, weak evidence, duplicate notes, and missed links.
+
+## Initialize a Vault
+
+Run:
+
+```bash
+./tools/init-second-brain-vault.sh /path/to/obsidian-vault
+./tools/verify-vault.sh /path/to/obsidian-vault
+```
+
+The initializer is non-destructive: it creates missing folders and copies missing templates, schemas, and dashboards, but keeps existing files unchanged.
+
+Expected vault verification output:
+
+```text
+Obsidian second brain vault verification passed.
+```
 
 ## Verification
 
-Run:
+Verify the skill pack itself:
 
 ```bash
 ./tools/verify-second-brain-skills.sh

@@ -1,10 +1,10 @@
 # Shared Obsidian Second Brain References
 
-This folder contains the shared memory model used by all four skills:
+This folder contains the shared memory model used by all five skills:
 
 - `vault-structure.md`: canonical folder layout.
 - `note-types.md`: note object model and required fields.
-- `workflows.md`: capture, compile, retrieve, lint flow.
+- `workflows.md`: init, capture, compile, retrieve, lint flow.
 - `reliability.md`: source preservation, confidence, ambiguity, and conflict rules.
 - `templates/`: reusable Obsidian note templates.
 

@@ -1,5 +1,12 @@
 # Workflows
 
+## Init Flow
+
+1. Identify the target vault path.
+2. Verify whether required folders, templates, schemas, and dashboards already exist.
+3. Create missing scaffold items without overwriting existing files.
+4. Verify the vault again before running capture, compile, retrieve, or lint.
+
 ## Capture Flow
 
 1. Accept raw input without requiring classification.
