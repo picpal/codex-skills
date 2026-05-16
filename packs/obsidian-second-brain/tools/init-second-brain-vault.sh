@@ -2,8 +2,8 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-repo_root="$(cd "$script_dir/.." && pwd)"
-template_root="$repo_root/vault-template"
+pack_root="$(cd "$script_dir/.." && pwd)"
+template_root="$pack_root/vault-template"
 
 usage() {
   echo "Usage: init-second-brain-vault.sh /path/to/obsidian-vault" >&2
@@ -63,5 +63,5 @@ Vault: $vault_root
 Directories created: $created_dirs
 Files copied: $copied_files
 Existing files kept: $kept_files
-Run verification: $repo_root/tools/verify-vault.sh "$vault_root"
+Run verification: $pack_root/tools/verify-vault.sh "$vault_root"
 REPORT

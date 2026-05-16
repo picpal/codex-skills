@@ -63,6 +63,6 @@ low | medium | high
 
 ## References
 
-- `../shared/obsidian-second-brain/references/workflows.md`
-- `../shared/obsidian-second-brain/references/reliability.md`
+- `../../shared/obsidian-second-brain/references/workflows.md`
+- `../../shared/obsidian-second-brain/references/reliability.md`
 - `references/retrieve-workflow.md`

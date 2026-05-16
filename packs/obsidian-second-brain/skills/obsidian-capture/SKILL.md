@@ -57,6 +57,6 @@ Capture must be low-friction. Do not force the user to classify the material bef
 
 ## References
 
-- `../shared/obsidian-second-brain/references/vault-structure.md`
-- `../shared/obsidian-second-brain/references/note-types.md`
+- `../../shared/obsidian-second-brain/references/vault-structure.md`
+- `../../shared/obsidian-second-brain/references/note-types.md`
 - `references/capture-workflow.md`

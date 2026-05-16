@@ -43,6 +43,6 @@ Lint produces review items and synthesis reports. It does not silently rewrite l
 
 ## References
 
-- `../shared/obsidian-second-brain/references/workflows.md`
-- `../shared/obsidian-second-brain/references/reliability.md`
+- `../../shared/obsidian-second-brain/references/workflows.md`
+- `../../shared/obsidian-second-brain/references/reliability.md`
 - `references/lint-workflow.md`

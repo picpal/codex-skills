@@ -7,19 +7,19 @@ This workflow prepares an Obsidian vault so the second-brain skills can work fro
 Initialize a vault:
 
 ```bash
-./tools/init-second-brain-vault.sh /path/to/obsidian-vault
+<pack-root>/tools/init-second-brain-vault.sh /path/to/obsidian-vault
 ```
 
 Verify a vault:
 
 ```bash
-./tools/verify-vault.sh /path/to/obsidian-vault
+<pack-root>/tools/verify-vault.sh /path/to/obsidian-vault
 ```
 
 ## What Init Does
 
 - Creates the vault directory if it does not exist.
-- Copies the starter `vault-template/` tree into the vault.
+- Copies the starter `<pack-root>/vault-template/` tree into the vault.
 - Creates missing folders.
 - Copies missing templates, schemas, and dashboards.
 - Keeps every existing file unchanged.

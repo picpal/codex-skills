@@ -1,74 +1,83 @@
-# Obsidian 제2의 뇌 스킬팩
+# Codex 스킬 컬렉션
 
-이 저장소는 Codex와 Claude Code가 Obsidian Vault를 제2의 뇌처럼 다루기 위한 스킬팩입니다.
+이 저장소는 여러 종류의 Codex 스킬과 스킬팩을 함께 관리하기 위한 컬렉션입니다.
 
-핵심 원칙은 하나입니다.
+Obsidian 제2의 뇌는 이 저장소의 한 pack일 뿐이며, 앞으로 GitHub, 글쓰기, 리서치, 의사결정, 자동화 같은 다른 스킬도 같은 구조 안에서 확장할 수 있습니다.
 
-> 자유롭게 입력하고, 원본을 보존하고, 지식을 재구성하고, 인사이트를 드러내며, 실행과 의사결정으로 연결한다.
+## 디렉토리 구조
 
-## 구성
-
-- `vault-template/`: Obsidian Vault 초기 디렉토리 구조.
-- `shared/obsidian-second-brain/`: 공통 레퍼런스와 노트 템플릿.
-- `obsidian-init/`: Vault 초기 세팅과 연결 상태 점검 스킬.
-- `obsidian-capture/`: 생각, 링크, 세션, 자료를 마찰 없이 기록하는 스킬.
-- `obsidian-compile/`: 원본 자료를 링크된 기억 구조로 재구성하는 스킬.
-- `obsidian-retrieve/`: Vault 안의 근거를 따라 질문에 답하는 스킬.
-- `obsidian-lint/`: 기억 구조의 건강 상태를 점검하고 리뷰 항목을 만드는 스킬.
+- `skills/`: 특정 pack에 묶이지 않는 독립 스킬.
+- `packs/`: 여러 스킬과 전용 자산을 함께 쓰는 스킬팩.
+- `packs/obsidian-second-brain/`: Obsidian 제2의 뇌 pack.
+- `tools/`: 레포 전체 설치와 검증 도구.
+- `docs/`: 설계 문서와 작업 계획.
 
 ## 빠른 시작
 
 설치와 Codex 연결 방법은 [INSTALL.ko.md](INSTALL.ko.md)를 참고하세요.
 
 ```bash
-./tools/verify-second-brain-skills.sh
+./tools/verify-skill-repo.sh
 ./tools/install-codex-skills.sh
-./tools/init-second-brain-vault.sh /path/to/obsidian-vault
-./tools/verify-vault.sh /path/to/obsidian-vault
 ```
 
-레포 밖에서는 설치 후 `~/.codex/skills/tools/` 아래의 스크립트를 직접 실행할 수 있습니다.
-
-## 흐름
-
-1. Vault 구조를 초기화하거나 검증합니다.
-2. 생각, 대화, 링크, 영상, 이미지, 웹페이지 같은 원자료를 자유롭게 기록합니다.
-3. 원본과 메타데이터를 보존합니다.
-4. 개념, 주장, 질문, 인사이트, 프로젝트, 의사결정 노트로 재구성합니다.
-5. 맵과 출처 링크를 따라 근거 기반으로 조회합니다.
-6. 오래된 주장, 약한 근거, 중복 노트, 누락된 링크를 점검합니다.
-
-## Vault 초기화
-
-실제 Obsidian Vault를 준비하려면 다음을 실행합니다.
+Obsidian 제2의 뇌 Vault를 초기화하려면 pack 전용 도구를 사용합니다.
 
 ```bash
-./tools/init-second-brain-vault.sh /path/to/obsidian-vault
-./tools/verify-vault.sh /path/to/obsidian-vault
+packs/obsidian-second-brain/tools/init-second-brain-vault.sh /path/to/obsidian-vault
+packs/obsidian-second-brain/tools/verify-vault.sh /path/to/obsidian-vault
 ```
 
-초기화 스크립트는 비파괴 방식입니다. 빠진 폴더와 템플릿, 스키마, 대시보드만 생성하고 기존 파일은 덮어쓰지 않습니다.
+## 현재 포함된 Pack
 
-Vault 검증 성공 시 출력:
+### Obsidian Second Brain
+
+경로: `packs/obsidian-second-brain/`
+
+포함 스킬:
+
+- `obsidian-init`
+- `obsidian-capture`
+- `obsidian-compile`
+- `obsidian-retrieve`
+- `obsidian-lint`
+
+이 pack은 자유 입력, 원본 보존, 지식 재구성, 인사이트 생성, 프로젝트와 의사결정 연결을 목표로 합니다.
+
+## 스킬 추가 규칙
+
+독립 스킬은 다음처럼 추가합니다.
 
 ```text
-Obsidian second brain vault verification passed.
+skills/<skill-name>/
+  SKILL.md
+  references/
 ```
 
-## 스킬팩 검증
+특정 시스템에 묶인 스킬 묶음은 pack으로 추가합니다.
 
-스킬팩 자체가 필요한 파일과 구조를 갖추고 있는지 확인합니다.
+```text
+packs/<pack-name>/
+  README.md
+  skills/
+    <skill-name>/
+      SKILL.md
+  shared/
+  tools/
+```
+
+`shared/`, `tools/`, `vault-template/` 같은 자산은 루트 공용으로 두지 않고, 해당 pack에 종속된다면 pack 내부에 둡니다. 루트 `tools/`에는 레포 전체 설치/검증처럼 모든 스킬에 공통인 도구만 둡니다.
+
+## 검증
+
+레포 전체 검증:
 
 ```bash
-./tools/verify-second-brain-skills.sh
+./tools/verify-skill-repo.sh
 ```
 
-검증 성공 시 출력:
+성공 시 출력:
 
 ```text
-Second brain skill pack verification passed.
+Codex skill repository verification passed.
 ```
-
-## 확장성
-
-새 스킬은 `obsidian-<name>/SKILL.md` 형태로 추가하고, 공통 규칙은 `shared/obsidian-second-brain/`, 실행 스크립트는 `tools/`, Vault 템플릿은 `vault-template/`에 둡니다. 새 스킬을 추가한 뒤에는 `tools/verify-second-brain-skills.sh`에 검증 항목을 추가해 스킬팩 전체가 깨지지 않게 관리합니다.

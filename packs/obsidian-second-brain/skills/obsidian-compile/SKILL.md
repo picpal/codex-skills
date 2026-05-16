@@ -48,6 +48,6 @@ Promote to Insight when:
 
 ## References
 
-- `../shared/obsidian-second-brain/references/workflows.md`
-- `../shared/obsidian-second-brain/references/reliability.md`
+- `../../shared/obsidian-second-brain/references/workflows.md`
+- `../../shared/obsidian-second-brain/references/reliability.md`
 - `references/compile-workflow.md`

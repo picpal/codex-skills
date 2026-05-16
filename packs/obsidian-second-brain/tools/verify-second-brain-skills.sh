@@ -2,12 +2,11 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-repo_root="$(cd "$script_dir/.." && pwd)"
-cd "$repo_root"
+pack_root="$(cd "$script_dir/.." && pwd)"
+cd "$pack_root"
 
 required_files=(
   "README.md"
-  "INSTALL.ko.md"
   "shared/obsidian-second-brain/README.md"
   "shared/obsidian-second-brain/references/vault-structure.md"
   "shared/obsidian-second-brain/references/note-types.md"
@@ -20,14 +19,13 @@ required_files=(
   "vault-template/00_System/templates/source.md"
   "vault-template/00_System/templates/insight.md"
   "tools/init-second-brain-vault.sh"
-  "tools/install-codex-skills.sh"
   "tools/verify-vault.sh"
-  "obsidian-init/SKILL.md"
-  "obsidian-init/references/init-workflow.md"
-  "obsidian-capture/SKILL.md"
-  "obsidian-compile/SKILL.md"
-  "obsidian-retrieve/SKILL.md"
-  "obsidian-lint/SKILL.md"
+  "skills/obsidian-init/SKILL.md"
+  "skills/obsidian-init/references/init-workflow.md"
+  "skills/obsidian-capture/SKILL.md"
+  "skills/obsidian-compile/SKILL.md"
+  "skills/obsidian-retrieve/SKILL.md"
+  "skills/obsidian-lint/SKILL.md"
 )
 
 for path in "${required_files[@]}"; do
@@ -53,29 +51,23 @@ for path in "${required_dirs[@]}"; do
   fi
 done
 
-grep -R "name: obsidian-capture" obsidian-capture/SKILL.md >/dev/null
-grep -R "name: obsidian-init" obsidian-init/SKILL.md >/dev/null
-grep -R "name: obsidian-compile" obsidian-compile/SKILL.md >/dev/null
-grep -R "name: obsidian-retrieve" obsidian-retrieve/SKILL.md >/dev/null
-grep -R "name: obsidian-lint" obsidian-lint/SKILL.md >/dev/null
+grep -R "name: obsidian-capture" skills/obsidian-capture/SKILL.md >/dev/null
+grep -R "name: obsidian-init" skills/obsidian-init/SKILL.md >/dev/null
+grep -R "name: obsidian-compile" skills/obsidian-compile/SKILL.md >/dev/null
+grep -R "name: obsidian-retrieve" skills/obsidian-retrieve/SKILL.md >/dev/null
+grep -R "name: obsidian-lint" skills/obsidian-lint/SKILL.md >/dev/null
 grep -R "Init Flow" shared/obsidian-second-brain/references/workflows.md >/dev/null
-grep -R "설치 가이드" INSTALL.ko.md >/dev/null
 grep -R "Obsidian second brain vault verification passed" tools/verify-vault.sh >/dev/null
 grep -R "Merge Before Create" shared/obsidian-second-brain/references/reliability.md >/dev/null
 grep -R "New Connection" shared/obsidian-second-brain/templates/insight.md >/dev/null
 grep -R "Review Items" vault-template/00_System/dashboards/Home.md >/dev/null
 grep -R "Retrospectives" shared/obsidian-second-brain/templates/project.md >/dev/null
 grep -R "Retrospectives" vault-template/00_System/templates/project.md >/dev/null
-grep -R "Output" obsidian-retrieve/SKILL.md >/dev/null
-grep -R "Broken Links" obsidian-lint/references/lint-workflow.md >/dev/null
+grep -R "Output" skills/obsidian-retrieve/SKILL.md >/dev/null
+grep -R "Broken Links" skills/obsidian-lint/references/lint-workflow.md >/dev/null
 
 if [[ ! -x tools/init-second-brain-vault.sh ]]; then
   echo "Script is not executable: tools/init-second-brain-vault.sh" >&2
-  exit 1
-fi
-
-if [[ ! -x tools/install-codex-skills.sh ]]; then
-  echo "Script is not executable: tools/install-codex-skills.sh" >&2
   exit 1
 fi
 
@@ -84,7 +76,7 @@ if [[ ! -x tools/verify-vault.sh ]]; then
   exit 1
 fi
 
-if grep -R -E "T[B]D|TO[D]O|FIX[M]E" README.md shared vault-template obsidian-init obsidian-capture obsidian-compile obsidian-retrieve obsidian-lint >/dev/null; then
+if grep -R -E "T[B]D|TO[D]O|FIX[M]E" README.md shared vault-template skills >/dev/null; then
   echo "Found placeholder text." >&2
   exit 1
 fi

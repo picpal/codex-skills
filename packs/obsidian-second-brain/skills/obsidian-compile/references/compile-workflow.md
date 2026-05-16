@@ -10,7 +10,7 @@
    - create new note
    - keep as unresolved
    - mark as hypothesis
-5. Update or create notes using templates from `shared/obsidian-second-brain/templates`.
+5. Update or create notes using templates from the pack's `shared/obsidian-second-brain/templates`.
 6. Update the most relevant Map.
 7. Update Dashboard sections when there are visible insights, tensions, decisions, or next actions.
 8. Write a log entry.

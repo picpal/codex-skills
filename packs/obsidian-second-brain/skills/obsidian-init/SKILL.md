@@ -23,11 +23,11 @@ Initialization is non-destructive. Create missing structure and report what alre
 1. Identify the vault path from the user, project config, or current context.
 2. If the vault exists, run:
    ```bash
-   ./tools/verify-vault.sh /path/to/obsidian-vault
+   <pack-root>/tools/verify-vault.sh /path/to/obsidian-vault
    ```
 3. If verification fails or the vault is new, run:
    ```bash
-   ./tools/init-second-brain-vault.sh /path/to/obsidian-vault
+   <pack-root>/tools/init-second-brain-vault.sh /path/to/obsidian-vault
    ```
 4. Run verification again.
 5. Report the vault path, dashboard path, template path, and any remaining missing items.
@@ -58,6 +58,6 @@ Successful init should leave these anchors in place:
 ## References
 
 - `references/init-workflow.md`
-- `../shared/obsidian-second-brain/references/vault-structure.md`
-- `../shared/obsidian-second-brain/references/note-types.md`
-- `../shared/obsidian-second-brain/references/reliability.md`
+- `../../shared/obsidian-second-brain/references/vault-structure.md`
+- `../../shared/obsidian-second-brain/references/note-types.md`
+- `../../shared/obsidian-second-brain/references/reliability.md`
