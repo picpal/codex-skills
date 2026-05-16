@@ -32,3 +32,7 @@ related_insights: []
 ## Outputs
 
 - {{output_link}}
+
+## Retrospectives
+
+- {{retrospective_link}}

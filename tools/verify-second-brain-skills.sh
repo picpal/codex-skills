@@ -54,6 +54,8 @@ grep -R "name: obsidian-lint" obsidian-lint/SKILL.md >/dev/null
 grep -R "Merge Before Create" shared/obsidian-second-brain/references/reliability.md >/dev/null
 grep -R "New Connection" shared/obsidian-second-brain/templates/insight.md >/dev/null
 grep -R "Review Items" vault-template/00_System/dashboards/Home.md >/dev/null
+grep -R "Retrospectives" shared/obsidian-second-brain/templates/project.md >/dev/null
+grep -R "Retrospectives" vault-template/00_System/templates/project.md >/dev/null
 grep -R "Output" obsidian-retrieve/SKILL.md >/dev/null
 grep -R "Broken Links" obsidian-lint/references/lint-workflow.md >/dev/null
 
