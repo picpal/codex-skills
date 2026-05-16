@@ -16,6 +16,19 @@
 - `obsidian-retrieve/`: Vault 안의 근거를 따라 질문에 답하는 스킬.
 - `obsidian-lint/`: 기억 구조의 건강 상태를 점검하고 리뷰 항목을 만드는 스킬.
 
+## 빠른 시작
+
+설치와 Codex 연결 방법은 [INSTALL.ko.md](INSTALL.ko.md)를 참고하세요.
+
+```bash
+./tools/verify-second-brain-skills.sh
+./tools/install-codex-skills.sh
+./tools/init-second-brain-vault.sh /path/to/obsidian-vault
+./tools/verify-vault.sh /path/to/obsidian-vault
+```
+
+레포 밖에서는 설치 후 `~/.codex/skills/tools/` 아래의 스크립트를 직접 실행할 수 있습니다.
+
 ## 흐름
 
 1. Vault 구조를 초기화하거나 검증합니다.
@@ -55,3 +68,7 @@ Obsidian second brain vault verification passed.
 ```text
 Second brain skill pack verification passed.
 ```
+
+## 확장성
+
+새 스킬은 `obsidian-<name>/SKILL.md` 형태로 추가하고, 공통 규칙은 `shared/obsidian-second-brain/`, 실행 스크립트는 `tools/`, Vault 템플릿은 `vault-template/`에 둡니다. 새 스킬을 추가한 뒤에는 `tools/verify-second-brain-skills.sh`에 검증 항목을 추가해 스킬팩 전체가 깨지지 않게 관리합니다.

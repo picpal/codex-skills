@@ -7,6 +7,7 @@ cd "$repo_root"
 
 required_files=(
   "README.md"
+  "INSTALL.ko.md"
   "shared/obsidian-second-brain/README.md"
   "shared/obsidian-second-brain/references/vault-structure.md"
   "shared/obsidian-second-brain/references/note-types.md"
@@ -19,6 +20,7 @@ required_files=(
   "vault-template/00_System/templates/source.md"
   "vault-template/00_System/templates/insight.md"
   "tools/init-second-brain-vault.sh"
+  "tools/install-codex-skills.sh"
   "tools/verify-vault.sh"
   "obsidian-init/SKILL.md"
   "obsidian-init/references/init-workflow.md"
@@ -57,6 +59,7 @@ grep -R "name: obsidian-compile" obsidian-compile/SKILL.md >/dev/null
 grep -R "name: obsidian-retrieve" obsidian-retrieve/SKILL.md >/dev/null
 grep -R "name: obsidian-lint" obsidian-lint/SKILL.md >/dev/null
 grep -R "Init Flow" shared/obsidian-second-brain/references/workflows.md >/dev/null
+grep -R "설치 가이드" INSTALL.ko.md >/dev/null
 grep -R "Obsidian second brain vault verification passed" tools/verify-vault.sh >/dev/null
 grep -R "Merge Before Create" shared/obsidian-second-brain/references/reliability.md >/dev/null
 grep -R "New Connection" shared/obsidian-second-brain/templates/insight.md >/dev/null
@@ -68,6 +71,11 @@ grep -R "Broken Links" obsidian-lint/references/lint-workflow.md >/dev/null
 
 if [[ ! -x tools/init-second-brain-vault.sh ]]; then
   echo "Script is not executable: tools/init-second-brain-vault.sh" >&2
+  exit 1
+fi
+
+if [[ ! -x tools/install-codex-skills.sh ]]; then
+  echo "Script is not executable: tools/install-codex-skills.sh" >&2
   exit 1
 fi
 
