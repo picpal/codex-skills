@@ -56,7 +56,7 @@ Capture must be low-friction. Do not force the user to classify the material bef
    - If a chunk is too large or mixes multiple claims, set `chunk_quality: too_large` and `status: needs_rechunk`.
    - Summarize and extract compile candidates from the OCR text, but keep uncertain OCR readings marked as low confidence.
 6. Create a Source or Capture note with metadata.
-7. Set `status: captured`, `status: needs_classification`, `status: needs_transcript`, or `status: needs_ocr_review`.
+7. Set `status: captured`, `status: needs_classification`, `status: needs_transcript`, `status: needs_ocr_review`, or `status: needs_rechunk`.
 8. Add compile candidates for concepts, claims, questions, insights, projects, or decisions when the source content supports them.
 9. Add a short processing note that suggests the next compile step.
 
