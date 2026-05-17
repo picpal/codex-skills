@@ -20,8 +20,14 @@ Lint produces review items and synthesis reports. It does not silently rewrite l
 5. Find weak evidence and missing source links.
 6. Find broken links.
 7. Find unresolved questions.
-8. Create a lint report in `60_Reviews/lint-reports`.
-9. Update Home dashboard review items.
+8. Find OCR book quality issues:
+   - Book Index notes that became long summaries.
+   - `retrieval_ready: yes` without chunk Source links.
+   - `chunk_quality: too_large` with compiled objects.
+   - Claim or Insight notes without source location links.
+   - `needs_ocr_review` notes with no next review action.
+9. Create a lint report in `60_Reviews/lint-reports`.
+10. Update Home dashboard review items.
 
 ## Report Sections
 
@@ -30,6 +36,7 @@ Lint produces review items and synthesis reports. It does not silently rewrite l
 - Stale claims
 - Decisions needing review
 - Missing evidence
+- OCR book quality issues
 - Broken links
 - Unresolved questions
 - Suggested next actions
