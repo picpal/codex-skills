@@ -48,8 +48,12 @@ Capture must be low-friction. Do not force the user to classify the material bef
    - Store book OCR material under `20_Sources/books`.
    - Store large raw OCR PDFs and scan files under `20_Sources/books/raw`.
    - Create one book-level Source note as an index when the book is large.
+   - Treat the Book Index as a routing note, not final answer evidence.
    - Create chapter or section Source notes when a single note would become too long.
    - Record title, author, edition if known, OCR quality, page or chapter range, and file location.
+   - Add `chunking_strategy`, `chunk_unit`, `chunk_quality`, `retrieval_ready`, and `evidence_level` when creating OCR book notes.
+   - If chunk Source notes do not exist yet, use `retrieval_ready: partial` or `retrieval_ready: no`.
+   - If a chunk is too large or mixes multiple claims, set `chunk_quality: too_large` and `status: needs_rechunk`.
    - Summarize and extract compile candidates from the OCR text, but keep uncertain OCR readings marked as low confidence.
 6. Create a Source or Capture note with metadata.
 7. Set `status: captured`, `status: needs_classification`, `status: needs_transcript`, or `status: needs_ocr_review`.
@@ -90,11 +94,15 @@ For OCR books, scanned books, or chapter text, the Source note should include:
 - `## Summary`: one to five lines for the captured scope.
 - `## Key Points`: main concepts, claims, examples, methods, and definitions.
 - `## Location Notes`: page, chapter, heading, or section anchors when available.
+- `## Chunking Plan`: strategy, unit, quality, and rechunk candidates.
+- `## Retrieval Safety`: retrieval readiness, evidence level, and answer scope.
 - `## Compile Candidates`: candidate Concept, Claim, Question, Insight, Project, or Decision notes.
 - `## OCR Text or Excerpts`: only the needed excerpt, or a pointer to the local OCR file when the text is long.
 - `## Processing Notes`: next step, OCR cleanup needs, and split/merge notes.
 
 Prefer `20_Sources/books` for book material. Use `20_Sources/documents` only when the material is not book-like. Do not turn a whole book into one giant note if chapter or section notes would make retrieval easier.
+
+Book Index notes are not sufficient answer evidence. They should point to chunk Source notes. Use `retrieval_ready: no` or `retrieval_ready: partial` until chunk Source notes and source locations exist.
 
 ## Safety
 
@@ -106,6 +114,9 @@ Prefer `20_Sources/books` for book material. Use `20_Sources/documents` only whe
 - Do not summarize a video in detail from title, thumbnail, or comments alone.
 - Do not treat OCR text as exact evidence when the scan quality is uncertain.
 - Do not expose long copyrighted book text in chat output by default. Keep private OCR source material in the vault and work from summaries, location notes, and short excerpts unless the user explicitly asks otherwise.
+- If chunk boundaries are too broad or mixed, use `needs_rechunk`.
+- Do not promote index-only content into strong Claim or Insight notes.
+- Do not mark OCR book material as `retrieval_ready: yes` unless chunk Source notes and source locations exist.
 - If evidence is weak, set `confidence: low`.
 
 ## References

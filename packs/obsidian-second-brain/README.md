@@ -126,6 +126,9 @@ OCR 책 원본은 `20_Sources/books/raw/`에 둡니다. 책 전체가 길다면 
 $obsidian-capture
 이 OCR 책 파일을 book Source로 저장해줘.
 책 전체 인덱스와 장별 요약, 위치 메모, concept/claim/question/insight 후보를 만들어줘.
+책 index는 요약문이 아니라 탐색 지도로 만들어줘.
+chunking_strategy, chunk_quality, retrieval_ready, evidence_level을 남기고,
+chunk가 없으면 index만 보고 답하지 않도록 표시해줘.
 20_Sources/books/raw/book-ocr.pdf
 ```
 
