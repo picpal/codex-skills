@@ -79,7 +79,16 @@ grep -R "needs_ocr_review" skills/obsidian-capture/SKILL.md >/dev/null
 grep -R "Book OCR Workflow" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
 grep -R "20_Sources/books/raw" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
 grep -R "source_type: book_ocr" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
-grep -R "OCR Basis" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "Quality Gate" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "chunking_strategy" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
+grep -R "chunk_quality" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "retrieval_ready" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
+grep -R "evidence_level" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "Chunk Boundary Policy" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
+grep -R "Retrieval Safety Handoff" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
+grep -R "index_only" skills/obsidian-retrieve/SKILL.md >/dev/null
+grep -R "weak_ocr" skills/obsidian-retrieve/references/retrieve-workflow.md >/dev/null
+grep -R "OCR Book Quality Issues" skills/obsidian-lint/references/lint-workflow.md >/dev/null
 
 if [[ ! -x tools/init-second-brain-vault.sh ]]; then
   echo "Script is not executable: tools/init-second-brain-vault.sh" >&2
