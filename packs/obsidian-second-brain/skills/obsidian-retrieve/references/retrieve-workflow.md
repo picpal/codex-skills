@@ -15,6 +15,15 @@
 - Assign confidence.
 - Create follow-up Question notes when evidence is missing.
 
+## OCR Book Evidence Rules
+
+- Book Index notes route retrieval; they do not settle answers.
+- Prefer chunk Source notes with page, chapter, or heading anchors.
+- Use `evidence_level: source_verified` only when the answer points to a chunk Source and raw location.
+- Use `evidence_level: index_only` when only Book Index metadata exists.
+- Use `evidence_level: weak_ocr` when OCR quality or page boundaries are weak.
+- Use `evidence_level: needs_review` when human review is needed before strong claims.
+
 ## Writeback Rules
 
 When a retrieval session produces a useful new connection, save it as an Insight candidate.

@@ -25,6 +25,17 @@ Start from Maps, then follow Object links, then open Source notes for evidence. 
    - Project action
    - Output note
 
+## OCR Book Retrieval
+
+When a question touches OCR book material:
+
+1. Use Book Index notes only to find candidate chunk Source notes.
+2. Open the related Chapter or Section Source before answering.
+3. Check `retrieval_ready`, `evidence_level`, `ocr_quality`, and `chunk_quality`.
+4. If evidence is `index_only`, answer narrowly and state that chunk evidence is missing.
+5. If evidence is `weak_ocr` or `needs_review`, lower confidence and state the OCR limitation.
+6. If `chunk_quality: too_large`, suggest rechunking or ask for a narrower scope before making detailed claims.
+
 ## Answer Format
 
 Use:
@@ -46,6 +57,14 @@ Use:
 
 low | medium | high
 
+## Evidence Level
+
+source_verified | index_only | weak_ocr | needs_review
+
+## Answer Scope
+
+book | chapter | section | claim
+
 ## New Memory Candidates
 
 - Insight:
@@ -60,6 +79,9 @@ low | medium | high
 - Do not hide weak evidence.
 - Do not answer from memory alone when vault notes are available.
 - Mark missing evidence as `needs_evidence`.
+- Do not answer from Book Index alone when chunk Source notes are required.
+- Do not treat `needs_ocr_review` material as high-confidence evidence.
+- If `retrieval_ready` is `partial` or `no`, state what evidence is missing.
 
 ## References
 
