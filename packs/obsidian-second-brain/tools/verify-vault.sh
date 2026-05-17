@@ -46,6 +46,7 @@ required_files=(
   "00_System/dashboards/Home.md"
   "00_System/schemas/note-types.md"
   "00_System/templates/source.md"
+  "00_System/templates/book-ocr-source.md"
   "00_System/templates/insight.md"
   "00_System/templates/project.md"
   "00_System/templates/decision.md"

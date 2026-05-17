@@ -16,7 +16,7 @@ init
 ```
 
 - `obsidian-init`: Vault를 사용할 수 있는 상태로 초기 세팅하고 연결을 검증합니다.
-- `obsidian-capture`: 생각, 링크, CLI 대화, 문서, 이미지, 영상, 웹페이지를 빠르게 받아 적습니다.
+- `obsidian-capture`: 생각, 링크, CLI 대화, OCR 책, 문서, 이미지, 영상, 웹페이지를 빠르게 받아 적습니다.
 - `obsidian-compile`: 쌓인 자료를 기존 노트와 비교해 개념, 주장, 질문, 인사이트, 프로젝트, 의사결정으로 재구성합니다.
 - `obsidian-retrieve`: 질문에 대해 Vault 안의 지도, 객체, 원본 근거를 따라가며 답을 가져옵니다.
 - `obsidian-lint`: 오래된 주장, 끊어진 링크, 중복 개념, 방치된 질문, 검토 필요한 결정을 찾아 정리합니다.
@@ -78,7 +78,7 @@ packs/obsidian-second-brain/tools/verify-vault.sh /path/to/obsidian-vault
 - `00_System/dashboards/Home.md`: 현재 지식 상태, 처리 대기, 리뷰 항목을 보는 홈.
 - `10_Capture/inbox/`: 오늘 생각, 아이디어, 짧은 메모가 먼저 들어오는 곳.
 - `10_Capture/unprocessed/`: 아직 의미 분류가 애매한 자료.
-- `20_Sources/`: 원본 자료 보관층. 세션, 웹, 영상, 이미지, 문서 등.
+- `20_Sources/`: 원본 자료 보관층. 세션, 웹, 영상, 이미지, 책, 논문, 문서 등.
 - `30_Objects/`: 개념, 주장, 질문, 인사이트 같은 지식 객체.
 - `40_Maps/`: 토픽별 지도. 관련 객체와 원본을 탐색하는 입구.
 - `50_Execution/`: 프로젝트와 의사결정.
@@ -104,6 +104,8 @@ Vault는 /path/to/obsidian-vault 야.
 - 웹페이지와 링크: `20_Sources/web/`
 - 영상 링크와 YouTube 자막 요약: `20_Sources/videos/`
 - 이미지 참조: `20_Sources/images/`
+- OCR 책, 스캔한 책, 장/절 발췌: `20_Sources/books/`
+- 논문과 리포트: `20_Sources/papers/`
 - 문서와 PDF: `20_Sources/documents/`
 
 YouTube나 영상 링크는 단순 URL 저장으로 끝내지 않습니다. 자막, 스크립트, 캡션, 사용자가 붙여준 transcript가 있으면 그 텍스트를 근거로 요약, 핵심 주장, timestamp note, compile 후보를 함께 남깁니다.
@@ -116,6 +118,17 @@ https://www.youtube.com/watch?v=...
 ```
 
 자막이나 스크립트에 접근할 수 없으면 `status: needs_transcript`로 저장하고, 제목이나 썸네일만 보고 내용을 추측하지 않습니다.
+
+OCR 책은 `20_Sources/books/`에 둡니다. 책 전체가 길다면 한 파일에 몰아넣지 않고, 책 단위 인덱스와 장/절 단위 Source로 나눕니다.
+
+```text
+$obsidian-capture
+이 OCR 책 파일을 book Source로 저장해줘.
+책 전체 인덱스와 장별 요약, 위치 메모, concept/claim/question/insight 후보를 만들어줘.
+/path/to/book-ocr.txt
+```
+
+OCR 품질이 낮거나 페이지 경계가 불확실하면 `status: needs_ocr_review`로 남기고, 확실하지 않은 OCR 문장을 강한 근거처럼 다루지 않습니다.
 
 ### 쌓인 자료를 지식으로 바꾸기
 
@@ -185,7 +198,7 @@ Vault 전체를 점검해서 중복 개념, 끊어진 링크, 오래된 주장, 
 
 ## 노트 타입 역할
 
-- `Source`: 원본 자료. 링크, 영상, 세션, 문서, 이미지, 웹페이지.
+- `Source`: 원본 자료. 링크, 영상, 세션, OCR 책, 문서, 이미지, 웹페이지.
 - `Concept`: 반복해서 등장하는 개념.
 - `Claim`: 참/거짓 또는 강약을 검토해야 하는 주장.
 - `Question`: 아직 답이 없거나 더 조사해야 하는 질문.
