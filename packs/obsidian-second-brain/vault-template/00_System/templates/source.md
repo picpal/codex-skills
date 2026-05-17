@@ -23,6 +23,25 @@ related_projects: []
 
 - {{evidence_item}}
 
+## Transcript Basis
+
+- Source: {{transcript_source_or_na}}
+- Language: {{language_or_na}}
+- Access status: {{transcript_status_or_na}}
+
+## Timestamp Notes
+
+- {{timestamp_or_na}} - {{timestamp_note_or_na}}
+
+## Compile Candidates
+
+- Concept:
+- Claim:
+- Question:
+- Insight:
+- Project:
+- Decision:
+
 ## Processing Notes
 
 - Status: captured

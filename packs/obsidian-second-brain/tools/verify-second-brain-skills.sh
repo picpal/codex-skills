@@ -23,6 +23,7 @@ required_files=(
   "skills/obsidian-init/SKILL.md"
   "skills/obsidian-init/references/init-workflow.md"
   "skills/obsidian-capture/SKILL.md"
+  "skills/obsidian-capture/references/video-transcript-workflow.md"
   "skills/obsidian-compile/SKILL.md"
   "skills/obsidian-retrieve/SKILL.md"
   "skills/obsidian-lint/SKILL.md"
@@ -65,6 +66,8 @@ grep -R "Retrospectives" shared/obsidian-second-brain/templates/project.md >/dev
 grep -R "Retrospectives" vault-template/00_System/templates/project.md >/dev/null
 grep -R "Output" skills/obsidian-retrieve/SKILL.md >/dev/null
 grep -R "Broken Links" skills/obsidian-lint/references/lint-workflow.md >/dev/null
+grep -R "needs_transcript" skills/obsidian-capture/SKILL.md >/dev/null
+grep -R "Video Transcript Workflow" skills/obsidian-capture/references/video-transcript-workflow.md >/dev/null
 
 if [[ ! -x tools/init-second-brain-vault.sh ]]; then
   echo "Script is not executable: tools/init-second-brain-vault.sh" >&2

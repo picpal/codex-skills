@@ -1,42 +1,57 @@
 ---
 type: dashboard
 created: "{{date}}"
+updated: "{{date}}"
+cssclasses:
+  - second-brain-dashboard
 ---
 
-# Home Dashboard
+# Second Brain Dashboard
 
-## Worth Reading Now
+> [!important] 지금 볼 것
+> - {{insight}}
 
-- {{insight}}
+> [!todo] 다음 행동
+> - {{next_action}}
+> - {{review_item}}
 
-## Repeated Themes
+## Today
 
-- {{theme}}
+> [!info] 읽을 것
+> - {{insight}}
 
-## New Connections
+> [!question] 열린 질문
+> - {{question}}
 
-- {{connection}}
+> [!tip] 의사결정 후보
+> - {{decision_candidate}}
 
-## Open Questions
+> [!abstract] 프로젝트 기회
+> - {{project_opportunity}}
 
-- {{question}}
+## Knowledge Flow
 
-## Tensions And Contradictions
+> [!summary] 반복 주제
+> - {{theme}}
 
-- {{tension}}
+> [!example] 새 연결
+> - {{connection}}
 
-## Decision Candidates
+> [!question] 열린 질문
+> - {{question}}
 
-- {{decision_candidate}}
+> [!warning] 긴장과 모순
+> - {{tension}}
 
-## Project Opportunities
+## Execution
 
-- {{project_opportunity}}
+> [!tip] 의사결정 후보
+> - {{decision_candidate}}
 
-## Next Actions
-
-- {{next_action}}
+> [!abstract] 프로젝트 기회
+> - {{project_opportunity}}
 
 ## Review Items
 
-- {{review_item}}
+> [!attention] 점검 항목
+> - {{review_item}}
