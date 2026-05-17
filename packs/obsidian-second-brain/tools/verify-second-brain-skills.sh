@@ -29,6 +29,7 @@ required_files=(
   "skills/obsidian-capture/references/video-transcript-workflow.md"
   "skills/obsidian-compile/SKILL.md"
   "skills/obsidian-retrieve/SKILL.md"
+  "skills/obsidian-retrieve/references/retrieve-workflow.md"
   "skills/obsidian-lint/SKILL.md"
 )
 
@@ -80,10 +81,14 @@ grep -R "Book OCR Workflow" skills/obsidian-capture/references/book-ocr-workflow
 grep -R "20_Sources/books/raw" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
 grep -R "source_type: book_ocr" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
 grep -R "Quality Gate" vault-template/00_System/templates/book-ocr-source.md >/dev/null
-grep -R "chunking_strategy" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
-grep -R "chunk_quality" vault-template/00_System/templates/book-ocr-source.md >/dev/null
-grep -R "retrieval_ready" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
-grep -R "evidence_level" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "^chunking_strategy:" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
+grep -R "^chunking_strategy:" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "^chunk_quality:" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
+grep -R "^chunk_quality:" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "^retrieval_ready:" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
+grep -R "^retrieval_ready:" vault-template/00_System/templates/book-ocr-source.md >/dev/null
+grep -R "^evidence_level:" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
+grep -R "^evidence_level:" vault-template/00_System/templates/book-ocr-source.md >/dev/null
 grep -R "Chunk Boundary Policy" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
 grep -R "Retrieval Safety Handoff" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
 grep -R "index_only" skills/obsidian-retrieve/SKILL.md >/dev/null

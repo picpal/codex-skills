@@ -81,12 +81,12 @@ if [[ -f "$vault_root/00_System/templates/insight.md" ]] &&
 fi
 
 if [[ -f "$vault_root/00_System/templates/book-ocr-source.md" ]] &&
-  ! grep -R "chunking_strategy" "$vault_root/00_System/templates/book-ocr-source.md" >/dev/null; then
+  ! grep -R "^chunking_strategy:" "$vault_root/00_System/templates/book-ocr-source.md" >/dev/null; then
   missing+=("content: 00_System/templates/book-ocr-source.md lacks chunking_strategy")
 fi
 
 if [[ -f "$vault_root/00_System/templates/book-ocr-source.md" ]] &&
-  ! grep -R "retrieval_ready" "$vault_root/00_System/templates/book-ocr-source.md" >/dev/null; then
+  ! grep -R "^retrieval_ready:" "$vault_root/00_System/templates/book-ocr-source.md" >/dev/null; then
   missing+=("content: 00_System/templates/book-ocr-source.md lacks retrieval_ready")
 fi
 
