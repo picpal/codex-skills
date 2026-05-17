@@ -163,7 +163,7 @@ Store short relevant excerpts here, or point to the local OCR file when the text
 
 ## Processing Notes
 
-- Status: captured | needs_ocr_review
+- Status: captured | needs_ocr_review | needs_rechunk
 - Suggested next step: run obsidian-compile after reviewing OCR quality
 ```
 

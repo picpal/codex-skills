@@ -88,6 +88,7 @@ Use `status: needs_rechunk` when chunk boundaries need another pass.
 - `captured`: OCR is readable enough to summarize and compile later.
 - `needs_ocr_review`: OCR has obvious recognition errors, missing pages, bad page boundaries, or unclear language.
 - `needs_classification`: The material may be a book excerpt, report, paper, or note, and the type is uncertain.
+- `needs_rechunk`: Chunk boundaries are too broad, mixed, or need another pass before reliable retrieval/compile.
 
 ## Copyright and Output Rule
 
