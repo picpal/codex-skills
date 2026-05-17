@@ -90,7 +90,8 @@ Do not paste long copyrighted transcripts by default. Prefer transcript-based su
 For OCR books, scanned books, or chapter text, the Source note should include:
 
 - `## Original`: book title, author, edition, local file path or source pointer, and scope.
-- `## OCR Basis`: OCR source, OCR quality, language, page or chapter range, and review status.
+- `## Quality Gate`: OCR quality, page boundary confidence, missing page status, and review status.
+- `## Table of Contents`: chapter or section outline when available.
 - `## Summary`: one to five lines for the captured scope.
 - `## Key Points`: main concepts, claims, examples, methods, and definitions.
 - `## Location Notes`: page, chapter, heading, or section anchors when available.

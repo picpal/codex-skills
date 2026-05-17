@@ -112,16 +112,21 @@ Put large raw source files such as OCR PDFs, scanned PDFs, and OCR text exports 
 - Title: {{book_title}}
 - Author: {{author_or_unknown}}
 - Edition: {{edition_or_unknown}}
-- Source file: {{local_file_path_or_pointer}}
+- Raw PDF: {{raw_pdf_path_or_pointer}}
+- OCR Text: {{ocr_text_path_or_pointer}}
 - Scope: {{whole_book_or_chapter_or_page_range}}
-
-## OCR Basis
-
-- OCR source: scanned PDF | image OCR | text file | markdown file | user-provided OCR
 - Language: {{language_or_unknown}}
+
+## Quality Gate
+
 - OCR quality: low | medium | high
-- Page or chapter range: {{range_or_unknown}}
+- Page boundary confidence: low | medium | high
+- Missing pages: unknown | no | yes
 - Review status: captured | needs_ocr_review
+
+## Table of Contents
+
+- {{chapter_or_section_outline}}
 
 ## Chunking Plan
 
