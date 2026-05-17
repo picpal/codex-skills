@@ -32,6 +32,57 @@ Put OCR PDFs, scanned PDFs, OCR text exports, and other large raw book files in 
 8. Mark uncertain OCR readings with `confidence: low` or `status: needs_ocr_review`.
 9. Add compile candidates for future `obsidian-compile`.
 
+## Book Index Rules
+
+Book Index is a routing note, not answer evidence. It should help find chunk Source notes and raw locations.
+
+Include:
+
+- Title, author, edition, language, raw PDF path, and OCR text path.
+- OCR quality, page boundary confidence, missing page status, and review status.
+- Table of contents or estimated outline.
+- Chunking plan and chunk Source links.
+- Topic candidates and related map candidates.
+- Processing notes with next step.
+
+Do not include:
+
+- Long whole-book summaries.
+- Strong conclusions without source locations.
+- Claim or Insight content that cannot point back to a chunk or raw location.
+- Long OCR text.
+- Mixed statements where the author's claim and the user's interpretation are not separated.
+
+## Chunk Boundary Policy
+
+Index rules do not guarantee chunk quality. Use this boundary policy when creating chapter or section Source notes.
+
+Boundary priority:
+
+1. Follow the book's explicit table of contents.
+2. If the table of contents is missing or broken by OCR, follow headings.
+3. If headings are unstable, use page ranges.
+4. If one chunk contains multiple core claims, split by semantic or claim-level boundaries.
+5. If a human decision is required, use `chunking_strategy: manual` and `status: needs_rechunk`.
+
+Good chunks:
+
+- Read as one chapter, section, argument, or claim unit.
+- Include page, chapter, or heading anchors.
+- Separate summary, key points, and location notes.
+- State OCR quality.
+
+Weak chunks:
+
+- Are too long to use as focused evidence.
+- Mix unrelated topics.
+- Lack page or heading anchors.
+- Have many OCR errors with medium or high confidence.
+- Mix author claims with user interpretation.
+
+Use `chunk_quality: good | uneven | too_large | uncertain`.
+Use `status: needs_rechunk` when chunk boundaries need another pass.
+
 ## Status Rules
 
 - `captured`: OCR is readable enough to summarize and compile later.
@@ -52,3 +103,20 @@ Good compile candidates from books include:
 - Insight: connection between the book and existing maps/projects.
 - Project: practice, research, writing, product, or learning plan.
 - Decision: change in workflow, tool choice, or research direction.
+
+## Retrieval Safety Handoff
+
+Set `retrieval_ready` conservatively.
+
+- `retrieval_ready: yes`: chunk Source notes exist and evidence locations are usable.
+- `retrieval_ready: partial`: index exists, but only some chunks are ready.
+- `retrieval_ready: no`: raw file or index exists, but evidence chunks are missing or unreliable.
+
+Set `evidence_level` conservatively.
+
+- `source_verified`: answer can point to chunk Source and raw location.
+- `index_only`: only Book Index metadata exists.
+- `weak_ocr`: OCR quality or page boundaries are weak.
+- `needs_review`: human review is needed before strong claims.
+
+Book Index must not be used as final answer evidence. It routes the retrieval process to chunk Source notes.

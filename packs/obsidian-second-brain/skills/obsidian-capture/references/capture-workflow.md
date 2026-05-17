@@ -123,6 +123,13 @@ Put large raw source files such as OCR PDFs, scanned PDFs, and OCR text exports 
 - Page or chapter range: {{range_or_unknown}}
 - Review status: captured | needs_ocr_review
 
+## Chunking Plan
+
+- chunking_strategy: toc | heading | page_range | semantic | manual
+- chunk_unit: chapter | section | claim | page_range
+- chunk_quality: good | uneven | too_large | uncertain
+- rechunk_candidates: []
+
 ## Summary
 
 One to five lines for this book, chapter, or section.
@@ -147,6 +154,12 @@ One to five lines for this book, chapter, or section.
 ## OCR Text or Excerpts
 
 Store short relevant excerpts here, or point to the local OCR file when the text is long.
+
+## Retrieval Safety
+
+- retrieval_ready: yes | partial | no
+- evidence_level: source_verified | index_only | weak_ocr | needs_review
+- answer_scope: book | chapter | section | claim
 
 ## Processing Notes
 
