@@ -30,6 +30,7 @@ required_dirs=(
   "20_Sources/images"
   "20_Sources/documents"
   "20_Sources/books"
+  "20_Sources/books/raw"
   "20_Sources/papers"
   "30_Objects/concepts"
   "30_Objects/claims"

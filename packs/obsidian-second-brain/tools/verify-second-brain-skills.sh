@@ -43,6 +43,7 @@ required_dirs=(
   "vault-template/10_Capture/inbox"
   "vault-template/20_Sources/web"
   "vault-template/20_Sources/books"
+  "vault-template/20_Sources/books/raw"
   "vault-template/20_Sources/documents"
   "vault-template/20_Sources/papers"
   "vault-template/30_Objects/insights"
@@ -76,6 +77,7 @@ grep -R "needs_transcript" skills/obsidian-capture/SKILL.md >/dev/null
 grep -R "Video Transcript Workflow" skills/obsidian-capture/references/video-transcript-workflow.md >/dev/null
 grep -R "needs_ocr_review" skills/obsidian-capture/SKILL.md >/dev/null
 grep -R "Book OCR Workflow" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
+grep -R "20_Sources/books/raw" skills/obsidian-capture/references/book-ocr-workflow.md >/dev/null
 grep -R "source_type: book_ocr" shared/obsidian-second-brain/templates/book-ocr-source.md >/dev/null
 grep -R "OCR Basis" vault-template/00_System/templates/book-ocr-source.md >/dev/null
 

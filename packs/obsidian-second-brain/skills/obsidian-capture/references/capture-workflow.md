@@ -102,6 +102,8 @@ If transcript or captions are unavailable, keep the durable URL and metadata, se
 
 Use this structure for OCR books, scanned books, or chapter excerpts:
 
+Put large raw source files such as OCR PDFs, scanned PDFs, and OCR text exports in `20_Sources/books/raw`. Create smaller Source notes in `20_Sources/books` that point back to those raw files.
+
 ```markdown
 # Book OCR - {{book_title}} - {{scope}}
 

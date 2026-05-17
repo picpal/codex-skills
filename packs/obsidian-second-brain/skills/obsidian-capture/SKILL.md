@@ -34,7 +34,8 @@ Capture must be low-friction. Do not force the user to classify the material bef
    - `20_Sources/web` for web pages and URLs.
    - `20_Sources/videos` for video links, transcripts, captions, and timestamp summaries.
    - `20_Sources/images` for image references.
-   - `20_Sources/books` for OCR books, scanned books, chapters, and book excerpts.
+   - `20_Sources/books/raw` for large OCR PDFs, scanned book PDFs, OCR text exports, and raw book files.
+   - `20_Sources/books` for book index notes, chapter Source notes, sections, and book excerpts.
    - `20_Sources/documents` for generic documents and PDFs.
    - `20_Sources/papers` for academic papers and reports.
 4. For YouTube or video links, try to capture transcript-backed meaning, not just the URL:
@@ -45,6 +46,7 @@ Capture must be low-friction. Do not force the user to classify the material bef
    - If transcript access is unavailable, set `status: needs_transcript` and do not infer detailed content from the title alone.
 5. For OCR books, preserve the source pointer and split long material:
    - Store book OCR material under `20_Sources/books`.
+   - Store large raw OCR PDFs and scan files under `20_Sources/books/raw`.
    - Create one book-level Source note as an index when the book is large.
    - Create chapter or section Source notes when a single note would become too long.
    - Record title, author, edition if known, OCR quality, page or chapter range, and file location.

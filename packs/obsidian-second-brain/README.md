@@ -104,7 +104,8 @@ Vault는 /path/to/obsidian-vault 야.
 - 웹페이지와 링크: `20_Sources/web/`
 - 영상 링크와 YouTube 자막 요약: `20_Sources/videos/`
 - 이미지 참조: `20_Sources/images/`
-- OCR 책, 스캔한 책, 장/절 발췌: `20_Sources/books/`
+- OCR PDF, 스캔 PDF, OCR 원문 파일: `20_Sources/books/raw/`
+- 책 인덱스, 장/절 Source, 책 발췌: `20_Sources/books/`
 - 논문과 리포트: `20_Sources/papers/`
 - 문서와 PDF: `20_Sources/documents/`
 
@@ -119,13 +120,13 @@ https://www.youtube.com/watch?v=...
 
 자막이나 스크립트에 접근할 수 없으면 `status: needs_transcript`로 저장하고, 제목이나 썸네일만 보고 내용을 추측하지 않습니다.
 
-OCR 책은 `20_Sources/books/`에 둡니다. 책 전체가 길다면 한 파일에 몰아넣지 않고, 책 단위 인덱스와 장/절 단위 Source로 나눕니다.
+OCR 책 원본은 `20_Sources/books/raw/`에 둡니다. 책 전체가 길다면 한 파일에 몰아넣지 않고, `20_Sources/books/`에 책 단위 인덱스와 장/절 단위 Source를 따로 만듭니다.
 
 ```text
 $obsidian-capture
 이 OCR 책 파일을 book Source로 저장해줘.
 책 전체 인덱스와 장별 요약, 위치 메모, concept/claim/question/insight 후보를 만들어줘.
-/path/to/book-ocr.txt
+20_Sources/books/raw/book-ocr.pdf
 ```
 
 OCR 품질이 낮거나 페이지 경계가 불확실하면 `status: needs_ocr_review`로 남기고, 확실하지 않은 OCR 문장을 강한 근거처럼 다루지 않습니다.

@@ -10,12 +10,15 @@ Recommended layout:
 
 ```text
 20_Sources/books/
+  raw/
+    book-title.pdf
+    book-title-ocr.txt
   YYYY-MM-DD-book-title.md
   YYYY-MM-DD-book-title-ch01.md
   YYYY-MM-DD-book-title-ch02.md
 ```
 
-If the user already has files outside the vault, keep a durable local path in `## Original`. If the user puts the OCR files inside the vault, keep large raw OCR files as source material and create smaller Source notes for summaries, location notes, and compile candidates.
+Put OCR PDFs, scanned PDFs, OCR text exports, and other large raw book files in `20_Sources/books/raw`. If the user already has files outside the vault, keep a durable local path in `## Original`. If the user puts the OCR files inside the vault, keep large raw OCR files as source material and create smaller Source notes for summaries, location notes, and compile candidates.
 
 ## Capture Strategy
 
