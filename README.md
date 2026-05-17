@@ -1,6 +1,8 @@
-# Codex 스킬 컬렉션
+# codex-skills
 
 이 저장소는 여러 종류의 Codex 스킬과 스킬팩을 함께 관리하기 위한 컬렉션입니다.
+
+GitHub 저장소: `picpal/codex-skills`
 
 Obsidian 제2의 뇌는 이 저장소의 한 pack일 뿐이며, 앞으로 GitHub, 글쓰기, 리서치, 의사결정, 자동화 같은 다른 스킬도 같은 구조 안에서 확장할 수 있습니다.
 

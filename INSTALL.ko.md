@@ -1,6 +1,6 @@
-# 설치 가이드
+# codex-skills 설치 가이드
 
-이 문서는 다른 사용자가 이 레포를 받아 Codex에서 스킬 컬렉션을 쓰기 위한 안내입니다.
+이 문서는 다른 사용자가 `picpal/codex-skills` 레포를 받아 Codex에서 스킬 컬렉션을 쓰기 위한 안내입니다.
 
 ## 전제 조건
 
@@ -16,7 +16,7 @@ Obsidian 제2의 뇌 pack을 사용할 경우 Obsidian도 필요합니다.
 원하는 작업 폴더에서 레포를 받습니다.
 
 ```bash
-git clone <repo-url> codex-skills
+git clone https://github.com/picpal/codex-skills.git codex-skills
 cd codex-skills
 ```
 
